@@ -1,8 +1,16 @@
 var express = require('express');
 var app = express();
 
+app.set('view engine', 'ejs');
+//app.set('views', __dirname + '/custom-view-folder');
+
 app.get('/', function(req, res){
-    res.send('<h1>Hello Express</h1>');
+    //res.send('<h1>Hello Express</h1>');
+    res.render('default', {
+        title: 'developer',
+        games: ['Halo CE', 'Halo 2', 'Halo 3']
+    }
+    );
 });
 
 app.get('/about', function(req, res){
