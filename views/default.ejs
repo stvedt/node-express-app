@@ -6,7 +6,12 @@
 </head>
 <body>
 	<h1>Welcome</h1>
-	<p>Some body copy.</p>
+	<p>title: <%= title %> </p>
+	<ul>
+		<% for (var i = 0; i < games.length ; i++){ %>
+		<li><%= games[i] %></li>
+		<% } %>
+	</ul>
 
 </body>
 </html>
