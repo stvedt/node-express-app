@@ -1,8 +1,12 @@
 var express = require('express');
 var app = express();
 
+app.set('view engine', 'ejs');
+//app.set('views', __dirname + '/custom-view-folder');
+
 app.get('/', function(req, res){
-    res.send('<h1>Hello Express</h1>');
+    //res.send('<h1>Hello Express</h1>');
+    res.render('default');
 });
 
 app.get('/about', function(req, res){
