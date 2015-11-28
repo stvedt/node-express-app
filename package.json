@@ -15,5 +15,8 @@
   "bugs": {
     "url": "https://github.com/stvedt/node-express-app/issues"
   },
-  "homepage": "https://github.com/stvedt/node-express-app#readme"
+  "homepage": "https://github.com/stvedt/node-express-app#readme",
+  "devDependencies": {
+    "express": "^4.13.3"
+  }
 }
