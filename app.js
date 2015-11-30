@@ -1,5 +1,6 @@
 var express = require('express');
 var app = express();
+var routes = require('./routes');
 
 app.locals.siteTile = "Halo Scrims";
 
@@ -10,9 +11,7 @@ app.get('/', function(req, res){
     //res.send('<h1>Hello Express</h1>');
     res.render('default', {
         pageTitle: 'Home',
-        className: 'home',
-        title: 'developer',
-        games: ['Halo CE', 'Halo 2', 'Halo 3']
+        className: 'home'
     });
 });
 
@@ -23,14 +22,8 @@ app.get('/about', function(req, res){
     });
 });
 
-app.get('/teams/:teamName?', function(req, res){
-    var name = req.params.name;
-
-    res.render('default', {
-        pageTitle: 'Team: ' + req.params.teamName,
-        className: 'team-single'
-    });
-});
+app.get('/teams/', routes.teams);
+app.get('/teams/:teamName?', routes.teamSingle);
 
 app.get('/who/:name?/:title?', function(req, res){
     var name = req.params.name;
