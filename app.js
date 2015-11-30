@@ -1,6 +1,8 @@
 var express = require('express');
 var app = express();
 
+app.locals.siteTile = "Halo Scrims";
+
 app.set('view engine', 'ejs');
 //app.set('views', __dirname + '/custom-view-folder');
 
