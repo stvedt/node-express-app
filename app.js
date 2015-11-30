@@ -7,20 +7,27 @@ app.set('view engine', 'ejs');
 app.get('/', function(req, res){
     //res.send('<h1>Hello Express</h1>');
     res.render('default', {
+        pageTitle: 'Home',
+        className: 'home',
         title: 'developer',
         games: ['Halo CE', 'Halo 2', 'Halo 3']
-    }
-    );
+    });
 });
 
 app.get('/about', function(req, res){
-    res.send('<h1>About Me</h1>');
+    res.render('default', {
+        pageTitle: 'About Halo Scrims',
+        className: 'about'
+    });
 });
 
-app.get('/who/:name?', function(req, res){
+app.get('/teams/:teamName?', function(req, res){
     var name = req.params.name;
 
-    res.send(name + ' was here.');
+    res.render('default', {
+        pageTitle: 'Team: ' + req.params.teamName,
+        className: 'team-single'
+    });
 });
 
 app.get('/who/:name?/:title?', function(req, res){
