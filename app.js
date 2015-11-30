@@ -1,6 +1,6 @@
 var express = require('express');
 var app = express();
-var routes = require('./routes');
+var routes = require('./routes/teams');
 
 app.locals.siteTile = "Halo Scrims";
 
