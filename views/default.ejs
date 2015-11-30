@@ -1,17 +1,24 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-  <meta charset="utf-8">
-  <title>My App</title>
+    <% include partials/head.ejs %>
 </head>
 <body>
-	<h1>Welcome</h1>
-	<p>title: <%= title %> </p>
-	<ul>
-		<% for (var i = 0; i < games.length ; i++){ %>
-		<li><%= games[i] %></li>
-		<% } %>
-	</ul>
 
+    <% include partials/header.ejs %>
+
+    <div class="container">
+        <h1>Welcome</h1>
+        <p>title: <%= title %> </p>
+        <ul>
+            <% for (var i = 0; i < games.length ; i++){ %>
+            <li><%= games[i] %></li>
+            <% } %>
+        </ul>
+    </div><!-- /.container -->
+
+    <% include partials/footer.ejs %>
+
+    <% include partials/footer-scripts.ejs %>
 </body>
 </html>
